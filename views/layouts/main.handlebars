@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+<!--<link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">-->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.4/semantic.min.js"></script>
+
+<!--<script src="/semantic/dist/semantic.min.js"></script>-->
+
+<script src="/range.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/range.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+
+<title>Solver</title>
+
+</head>
+
+<body>
+<div class="ui inverted segment" id="navbar">
+  <div class="ui inverted secondary pointing menu">
+    {{#unless logged_in}}
+    <h3 class="item">
+      <a href="/">Home</a>
+    </h3>
+    <h3 class="item">
+      <a href="/users/sign-in">Login</a>
+    </h3>
+  {{/unless}}	
+
+  {{#if logged_in}}
+  	<a class="item" href="/users/sign-out">
+      <h3>Logout</h3>
+  	</a>	
+    {{#each users}}
+    <h3 class="item">
+     Rating: {{this.grade}} 
+    </h3>  
+    {{/each}}
+  {{/if}}
+
+  </div>
+</div>
+
+{{{body}}}
+
+
+</body>
+
+</HTML>
